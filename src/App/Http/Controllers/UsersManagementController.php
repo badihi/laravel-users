@@ -119,6 +119,8 @@ class UsersManagementController extends Controller
 
         $user = config('laravelusers.defaultUserModel')::create([
             'name'             => $request->input('name'),
+            'username'             => $request->input('username'),
+            'mobile'             => $request->input('mobile'),
             'email'            => $request->input('email'),
             'password'         => bcrypt($request->input('password')),
         ]);
@@ -217,6 +219,8 @@ class UsersManagementController extends Controller
         }
 
         $user->name = $request->input('name');
+        $user->mobile = $request->input('mobile');
+        $user->username = $request->input('username');
 
         if ($emailCheck) {
             $user->email = $request->input('email');
