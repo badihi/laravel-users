@@ -80,11 +80,25 @@
                                     <div class="row">
                                         <div class="col-4 col-sm-3">
                                             <strong>
-                                                {!! trans('laravelusers::laravelusers.show-user.name') !!}
+                                                Name
                                             </strong>
                                         </div>
                                         <div class="col-8 col-sm-9">
                                             {{ $user->name }}
+                                        </div>
+                                    </div>
+                                </li>
+                            @endif
+                            @if ($user->username)
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-3">
+                                            <strong>
+                                                Username
+                                            </strong>
+                                        </div>
+                                        <div class="col-8 col-sm-9">
+                                            {{ $user->username }}
                                         </div>
                                     </div>
                                 </li>
