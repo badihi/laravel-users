@@ -73,9 +73,9 @@
                                 @endif
                                 <div class="col-md-9">
                                     <div class="input-group">
-                                        {!! Form::text('username', NULL, array('id' => 'name', 'class' => 'form-control', 'placeholder' => 'Username')) !!}
+                                        {!! Form::text('username', NULL, array('id' => 'username', 'class' => 'form-control', 'placeholder' => 'Username')) !!}
                                         <div class="input-group-append">
-                                            <label class="input-group-text" for="name">
+                                            <label class="input-group-text" for="username">
                                                 @if(config('laravelusers.fontAwesomeEnabled'))
                                                     <i class="fa fa-fw {!! trans('laravelusers::forms.create_user_icon_username') !!}" aria-hidden="true"></i>
                                                 @else
@@ -87,6 +87,30 @@
                                     @if ($errors->has('username'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('username') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback row {{ $errors->has('mobile') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('mobile', 'Mobile', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::text('mobile', NULL, array('id' => 'mobile', 'class' => 'form-control', 'placeholder' => 'Mobile')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="mobile">
+                                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                                    <i class="fa fa-fw {!! trans('laravelusers::forms.create_user_icon_username') !!}" aria-hidden="true"></i>
+                                                @else
+                                                    Mobile
+                                                @endif
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('mobile'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('mobile') }}</strong>
                                         </span>
                                     @endif
                                 </div>

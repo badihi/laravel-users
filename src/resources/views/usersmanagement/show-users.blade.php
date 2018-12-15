@@ -87,6 +87,7 @@
                                         <th>{!! trans('laravelusers::laravelusers.users-table.id') !!}</th>
                                         <th>{!! trans('laravelusers::laravelusers.users-table.name') !!}</th>
                                         <th>Username</th>
+                                        <th>Mobile</th>
                                         <th class="hidden-xs">{!! trans('laravelusers::laravelusers.users-table.email') !!}</th>
                                         @if(config('laravelusers.rolesEnabled'))
                                             <th class="hidden-sm hidden-xs">{!! trans('laravelusers::laravelusers.users-table.role') !!}</th>
@@ -104,6 +105,7 @@
                                             <td>{{$user->id}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->username}}</td>
+                                            <td>{{$user->mobile}}</td>
                                             <td class="hidden-xs">{{$user->email}}</td>
                                             @if(config('laravelusers.rolesEnabled'))
                                                 <td class="hidden-sm hidden-xs">

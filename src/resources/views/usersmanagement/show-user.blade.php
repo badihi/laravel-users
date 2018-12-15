@@ -103,6 +103,20 @@
                                     </div>
                                 </li>
                             @endif
+                            @if ($user->mobile)
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-3">
+                                            <strong>
+                                                Mobile
+                                            </strong>
+                                        </div>
+                                        <div class="col-8 col-sm-9">
+                                            {{ $user->mobile }}
+                                        </div>
+                                    </div>
+                                </li>
+                            @endif
                             @if ($user->email)
                                 <li class="list-group-item">
                                     <div class="row">
