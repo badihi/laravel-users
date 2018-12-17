@@ -103,7 +103,7 @@
                                 @endif
                                 <div class="col-md-9">
                                     <div class="input-group">
-                                        {!! Form::text('mobile', $user->username, array('id' => 'mobile', 'class' => 'form-control', 'placeholder' => 'Mobile')) !!}
+                                        {!! Form::text('mobile', $user->mobile, array('id' => 'mobile', 'class' => 'form-control', 'placeholder' => 'Mobile')) !!}
                                         <div class="input-group-append">
                                             <label class="input-group-text" for="mobile">
                                                 @if(config('laravelusers.fontAwesomeEnabled'))
