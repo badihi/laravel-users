@@ -128,13 +128,13 @@
                                 <div class="col-md-9">
                                     <div class="input-group">
                                         {!! Form::select('start_weekday', [
-                                            "شنبه" => 0,
-                                            "یک‌شنبه" => 1,
-                                            "دوشنبه" => 2,
-                                            "سه‌شنبه" => 3,
-                                            "چهارشنبه" => 4,
-                                            "پنج‌شنبه" => 5,
-                                            "جمعه" => 6,
+                                            0 => "شنبه",
+                                            1 => "یک‌شنبه",
+                                            2 => "دوشنبه",
+                                            3 => "سه‌شنبه",
+                                            4 => "چهارشنبه",
+                                            5 => "پنج‌شنبه",
+                                            6 => "جمعه"
                                         ], $user->start_weekday, array('id' => 'start_weekday', 'class' => 'form-control', 'placeholder' => 'Start weekday')) !!}
                                         <div class="input-group-append">
                                             <label class="input-group-text" for="start_weekday">
