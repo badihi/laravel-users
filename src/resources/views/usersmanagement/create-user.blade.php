@@ -139,6 +139,38 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group has-feedback row {{ $errors->has('start_weekday') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('start_weekday', 'Start weekday', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::text('start_weekday', [
+                                            "شنبه" => 0,
+                                            "یک‌شنبه" => 1,
+                                            "دوشنبه" => 2,
+                                            "سه‌شنبه" => 3,
+                                            "چهارشنبه" => 4,
+                                            "پنج‌شنبه" => 5,
+                                            "جمعه" => 6,
+                                        ], array('id' => 'start_weekday', 'class' => 'form-control', 'placeholder' => 'Start weekday')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="name">
+                                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                                    <i class="fa fa-fw {!! trans('laravelusers::forms.create_user_icon_username') !!}" aria-hidden="true"></i>
+                                                @else
+                                                    Start weekday
+                                                @endif
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('start_weekday'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('start_weekday') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             @if($rolesEnabled)
                                 <div class="form-group has-feedback row {{ $errors->has('role') ? ' has-error ' : '' }}">
                                     @if(config('laravelusers.fontAwesomeEnabled'))

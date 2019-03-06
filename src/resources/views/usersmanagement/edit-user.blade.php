@@ -121,6 +121,34 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group has-feedback row {{ $errors->has('start_weekday') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('start_weekday', 'Start weekday', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::select('start_weekday', [
+                                            "شنبه" => 0,
+                                            "یک‌شنبه" => 1,
+                                            "دوشنبه" => 2,
+                                            "سه‌شنبه" => 3,
+                                            "چهارشنبه" => 4,
+                                            "پنج‌شنبه" => 5,
+                                            "جمعه" => 6,
+                                        ], $user->start_weekday, array('id' => 'start_weekday', 'class' => 'form-control', 'placeholder' => 'Start weekday')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="start_weekday">
+                                                Start weekday
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('start_weekday'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('start_weekday') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group has-feedback row {{ $errors->has('email') ? ' has-error ' : '' }}">
                                 @if(config('laravelusers.fontAwesomeEnabled'))
                                     {!! Form::label('email', trans('laravelusers::forms.create_user_label_email'), array('class' => 'col-md-3 control-label')); !!}

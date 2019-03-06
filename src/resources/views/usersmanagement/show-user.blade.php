@@ -131,6 +131,20 @@
                                     </div>
                                 </li>
                             @endif
+                            @if ($user->start_weekday)
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-3">
+                                            <strong>
+                                                Start weekday
+                                            </strong>
+                                        </div>
+                                        <div class="col-12 col-sm-9">
+                                            {{ $user->start_weekday }}
+                                        </div>
+                                    </div>
+                                </li>
+                            @endif
                             @if(config('laravelusers.rolesEnabled'))
                                 <li class="list-group-item">
                                     <div class="row">
