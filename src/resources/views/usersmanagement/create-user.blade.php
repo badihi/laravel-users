@@ -139,6 +139,26 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group has-feedback row {{ $errors->has('trello_id') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('trello_id', 'Trello ID', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::text('trello_id', NULL, array('id' => 'trello_id', 'class' => 'form-control', 'placeholder' => 'Trello ID')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="trello_id">
+                                                Trello ID
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('trello_id'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('trello_id') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group has-feedback row {{ $errors->has('start_weekday') ? ' has-error ' : '' }}">
                                 @if(config('laravelusers.fontAwesomeEnabled'))
                                     {!! Form::label('start_weekday', 'Start weekday', array('class' => 'col-md-3 control-label')); !!}

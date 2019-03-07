@@ -123,6 +123,7 @@ class UsersManagementController extends Controller
             'mobile'           => $request->input('mobile'),
             'email'            => $request->input('email'),
             'start_weekday'    => $request->input('start_weekday'),
+            'trello_id'        => $request->input('trello_id'),
             'password'         => bcrypt($request->input('password')),
         ]);
 
@@ -223,6 +224,7 @@ class UsersManagementController extends Controller
         $user->mobile = $request->input('mobile');
         $user->username = $request->input('username');
         $user->start_weekday = $request->input('start_weekday');
+        $user->trello_id = $request->input('trello_id');
 
         if ($emailCheck) {
             $user->email = $request->input('email');
