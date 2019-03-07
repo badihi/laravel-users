@@ -127,7 +127,7 @@
                                 @endif
                                 <div class="col-md-9">
                                     <div class="input-group">
-                                        {!! Form::text('trello_id', NULL, array('id' => 'trello_id', 'class' => 'form-control', 'placeholder' => 'Trello ID')) !!}
+                                        {!! Form::text('trello_id', $user->trello_id, array('id' => 'trello_id', 'class' => 'form-control', 'placeholder' => 'Trello ID')) !!}
                                         <div class="input-group-append">
                                             <label class="input-group-text" for="trello_id">
                                                 Trello ID
