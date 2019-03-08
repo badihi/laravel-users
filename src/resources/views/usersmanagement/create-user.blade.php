@@ -159,6 +159,26 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group has-feedback row {{ $errors->has('initial') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('initial', 'علامت اختصاری', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::text('initial', NULL, array('id' => 'initial', 'class' => 'form-control', 'placeholder' => 'علامت اختصاری')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="initial">
+                                                علامت اختصاری
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('initial'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('initial') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group has-feedback row {{ $errors->has('start_weekday') ? ' has-error ' : '' }}">
                                 @if(config('laravelusers.fontAwesomeEnabled'))
                                     {!! Form::label('start_weekday', 'Start weekday', array('class' => 'col-md-3 control-label')); !!}
