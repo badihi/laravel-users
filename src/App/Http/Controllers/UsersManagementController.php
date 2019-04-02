@@ -124,7 +124,7 @@ class UsersManagementController extends Controller
             'email'            => $request->input('email'),
             'start_weekday'    => $request->input('start_weekday'),
             'trello_id'        => $request->input('trello_id'),
-            'trello_id'        => $request->input('initial'),
+            'initial'        => $request->input('initial'),
             'password'         => bcrypt($request->input('password')),
         ]);
 
