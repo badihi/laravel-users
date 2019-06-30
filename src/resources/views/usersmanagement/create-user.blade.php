@@ -159,6 +159,26 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group has-feedback row {{ $errors->has('clockify_id') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('clockify_id', 'شناسه Clockify', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::text('clockify_id', NULL, array('id' => 'clockify_id', 'class' => 'form-control', 'placeholder' => 'شناسه Clockify')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="clockify_id">
+                                                علامت اختصاری
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('clockify_id'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('clockify_id') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group has-feedback row {{ $errors->has('initial') ? ' has-error ' : '' }}">
                                 @if(config('laravelusers.fontAwesomeEnabled'))
                                     {!! Form::label('initial', 'علامت اختصاری', array('class' => 'col-md-3 control-label')); !!}

@@ -124,6 +124,7 @@ class UsersManagementController extends Controller
             'email'            => $request->input('email'),
             'start_weekday'    => $request->input('start_weekday'),
             'trello_id'        => $request->input('trello_id'),
+            'clockify_id'        => $request->input('clockify_id'),
             'initial'        => $request->input('initial'),
             'password'         => bcrypt($request->input('password')),
         ]);
@@ -226,6 +227,7 @@ class UsersManagementController extends Controller
         $user->username = $request->input('username');
         $user->start_weekday = $request->input('start_weekday');
         $user->trello_id = $request->input('trello_id');
+        $user->clockify_id = $request->input('clockify_id');
         $user->initial = $request->input('initial');
 
         if ($emailCheck) {
