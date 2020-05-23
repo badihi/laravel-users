@@ -141,6 +141,26 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group has-feedback row {{ $errors->has('msp_id') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('msp_id', 'MSP ID', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::text('msp_id', $user->msp_id, array('id' => 'msp_id', 'class' => 'form-control', 'placeholder' => 'MSP ID')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="msp_id">
+                                                Trello ID
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('msp_id'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('msp_id') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="form-group has-feedback row {{ $errors->has('clockify_id') ? ' has-error ' : '' }}">
                                 @if(config('laravelusers.fontAwesomeEnabled'))
                                     {!! Form::label('clockify_id', 'Clockify ID', array('class' => 'col-md-3 control-label')); !!}
