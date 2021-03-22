@@ -251,6 +251,33 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group has-feedback row {{ $errors->has('calendar_type') ? ' has-error ' : '' }}">
+                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                    {!! Form::label('calendar_type', 'Start weekday', array('class' => 'col-md-3 control-label')); !!}
+                                @endif
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        {!! Form::select('calendar_type', [
+                                            'manual' => "دستی",
+                                            'full_time' => "تمام وقت"
+                                        ], array('id' => 'calendar_type', 'class' => 'form-control', 'placeholder' => 'نوع تقویم')) !!}
+                                        <div class="input-group-append">
+                                            <label class="input-group-text" for="name">
+                                                @if(config('laravelusers.fontAwesomeEnabled'))
+                                                    <i class="fa fa-fw {!! trans('laravelusers::forms.create_user_icon_username') !!}" aria-hidden="true"></i>
+                                                @else
+                                                    نوع تقویم
+                                                @endif
+                                            </label>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('calendar_type'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('calendar_type') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                             @if($rolesEnabled)
                                 <div class="form-group has-feedback row {{ $errors->has('role') ? ' has-error ' : '' }}">
                                     @if(config('laravelusers.fontAwesomeEnabled'))

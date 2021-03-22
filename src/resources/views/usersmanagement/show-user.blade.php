@@ -145,6 +145,20 @@
                                     </div>
                                 </li>
                             @endif
+                            @if ($user->calendar_type)
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-3">
+                                            <strong>
+                                                نوع تقویم
+                                            </strong>
+                                        </div>
+                                        <div class="col-12 col-sm-9">
+                                            {{ $user->calendar_type }}
+                                        </div>
+                                    </div>
+                                </li>
+                            @endif
                             @if(config('laravelusers.rolesEnabled'))
                                 <li class="list-group-item">
                                     <div class="row">
